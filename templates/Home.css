@@ -16,7 +16,6 @@ body{
     
 }
 .top{
-    background-image: url(https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png) ;
     display:flex;
     width:flex;
     height: flex;
@@ -34,6 +33,7 @@ body{
 }
 
 .top button{
+    position: absolute;
     justify-content: right;
     align-items: right;
 }
@@ -76,6 +76,7 @@ body{
 
 .cont {
     margin-left: 16px;
+    margin-right: 16px ;
     display:relative;
     background-color: #ffffff;
     opacity: 0.8;
@@ -103,5 +104,4 @@ body{
     color: white;
 
 }
-  
   
