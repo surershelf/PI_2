@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(0, 0, 0);
+    background-image: url(https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png) ;
     
 }
 .log{
