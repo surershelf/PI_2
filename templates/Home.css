@@ -1,130 +1,180 @@
-.parent-div {
-    width: 1440px;
-    height: 1024px;
-    overflow: hidden;
-    margin: 0px;
-    padding: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+}
+
+body{
+    display: relative;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+.top{
+  position: relative;
+  display: relative;
+}
+.top h1{
+  text-align: left;
+  font-size: 50px;
+}
+.top .botoes{
+  position: relative;
+  text-align: right;
+  bottom:70px ;
+}
+.top .botoes .login{
+  display: inline-flex;
+  align-items: center;
+  appearance: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  font-size: 25px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  margin-right:10px;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+}
+  .login:hover {
+    background: #F6F9FE;
+    color: #174ea6;
   }
-  .FRAME-2128-2 {
-    transform: rotate(0deg);
+  
+  .login:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+  }
+  
+  .login:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+  }
+  
+  .login:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  }
+  
+  .login:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+  }
+  
+  .login:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  }
+  
+  .login:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+  }
+  .login:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  }
+  .top .botoes .register{
+  
+    display: inline-flex;
+    align-items: center;
+    appearance: none;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    font-size: 25px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    margin-right:10px;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
     position: relative;
-    width: 1440px;
-    height: 1024px;
-    left: 0px;
-    top: 0px;
-    opacity: 1;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 1);
+    text-align: center;
+    text-transform: none;
   }
-  .GROUP-2129-6 {
-    position: absolute;
-    width: 1394px;
-    height: 123px;
-    left: 19px;
-    top: 12px;
-    transform: rotate(0deg);
-    z-index: 3;
-    opacity: 1;
-  }
-  .GROUP-2129-4 {
-    position: absolute;
-    width: 415px;
-    height: 67px;
-    left: 998px;
-    top: 21px;
-    transform: rotate(0deg);
-    z-index: 3;
-    opacity: 1;
-  }
-  .RECTANGLE-2128-4 {
-    position: absolute;
-    left: 1200px;
-    top: 21px;
-    transform: rotate(0deg);
-    transform-origin: center !important;
-    background: rgba(247, 247, 247, 1);
-  
-    border: 1px solid rgba(0, 0, 0, 1);
-  
-    border-radius: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-  
-    width: 211px;
-    height: 65px;
-    opacity: 1;
-  }
-  .RECTANGLE-2128-6 {
-    position: absolute;
-    left: 998px;
-    top: 21px;
-    transform: rotate(0deg);
-    transform-origin: center !important;
-    background: rgba(255, 255, 255, 1);
-  
-    border: 1px solid rgba(0, 0, 0, 1);
-  
-    border-radius: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-  
-    width: 156px;
-    height: 65px;
-    opacity: 1;
-  }
-  .GROUP-2129-21 {
-    position: absolute;
-    width: 874.7833862304688px;
-    height: 383px;
-    left: 232px;
-    top: 208px;
-    transform: rotate(0deg);
-    z-index: 4;
-    opacity: 1;
-  }
-  .GROUP-2129-26 {
-    position: absolute;
-    width: 478px;
-    height: 105px;
-    left: 470px;
-    top: 697px;
-    transform: rotate(0deg);
-    z-index: 5;
-    opacity: 1;
-  }
-  .RECTANGLE-2129-22 {
-    position: absolute;
-    left: 470px;
-    top: 697px;
-    transform: rotate(0deg);
-    transform-origin: center !important;
-    background: rgba(114, 215, 97, 1);
-  
-    border-radius: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-  
-    width: 478px;
-    height: 105px;
-    opacity: 1;
-  }
-  .FRAME-2129-24 {
-    transform: rotate(120.00000044529207deg);
-    position: absolute;
-    width: 169px;
-    height: 141.72425842285156px;
-    left: 941.6962943037292px;
-    top: 596.3189348876476px;
-    opacity: 1;
-    overflow: hidden;
-    background: transparent;
-  }
-  
-  
+    .register:hover {
+      background: #F6F9FE;
+      color: #174ea6;
+    }
+    
+    .register:active {
+      box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+      outline: none;
+    }
+    
+    .register:focus {
+      outline: none;
+      border: 2px solid #4285f4;
+    }
+    
+    .register:not(:disabled) {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    .register:not(:disabled):hover {
+      box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+    }
+    
+    .register:not(:disabled):focus {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    .register:not(:disabled):active {
+      box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+    }
+    
+    .regsiter:disabled {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+.text .tamanho {
+  text-decoration:double;
+  display: flex;
+  position: relative;
+  font-size: 40px;
+  justify-content: center;
+  text-align: center;
+  top: 100px;
+  right:5%;
+  font:bold;
+}
+
+.text .anot{
+  position: relative;
+  right:150px;
+  transform: rotate(-15deg);
+  max-width: 20%;
+}
+.text .org{
+  position: relative;
+  left:130px;
+  transform: rotate(15deg);
+  max-width: 20%;
+
+}
+
+.text .libere{
+  position: absolute;
+  top: 200px;
+
+}
+
+.text .main_text{
+  justify-content: center;
+  text-align: center;
+  max-width: 50%;
+  margin: 20%;
+  font-size:18px;
+}
