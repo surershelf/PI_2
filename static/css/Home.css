@@ -15,21 +15,39 @@ body{
     background-color: black;
     color: rgb(255, 255, 255);
 }
-
+.elemento-com-background {
+    position: relative; /* Necessário para posicionar o elemento filho */
+  }
+  
+  
 .top{
+  margin: 50px;
   position: relative;
   display: relative;
 }
-.top h1{
+.top img {
+    display: inline-flex;
+    position: relative;
+    vertical-align: middle;
+    text-align: left;
+    max-width: 120px;
+}
+
+.top .tech{
+  display: inline-flex;
+  vertical-align: middle;  
   text-align: left;
-  font-size: 50px;
+  font-size: 70px;
 }
 .top .botoes{
-  position: relative;
-  text-align: right;
-  bottom:70px ;
+    position: absolute;
+    display: inline-flex;
+    right: 20px;
+    bottom: 35px;
+
 }
 .top .botoes .login{
+  vertical-align: center;
   display: inline-flex;
   align-items: center;
   appearance: none;
@@ -40,7 +58,6 @@ body{
   font-size: 25px;
   font-weight: 500;
   height: 48px;
-  justify-content: center;
   letter-spacing: .25px;
   margin-right:10px;
   max-width: 100%;
@@ -153,16 +170,22 @@ body{
 
 .text .anot{
   position: relative;
-  right:150px;
+  right:100px;
   transform: rotate(-15deg);
   max-width: 20%;
 }
 .text .org{
   position: relative;
-  left:130px;
+  left:170px;
   transform: rotate(15deg);
   max-width: 20%;
 
+}
+.text img{
+    display: block;
+    margin-left: 43%;
+    margin-right: auto;
+    max-width: 100px;
 }
 
 .text .libere{
