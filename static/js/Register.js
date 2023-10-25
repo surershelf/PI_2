@@ -1,11 +1,17 @@
-const passwordInput = document.getElementById("password");
-const confirmPasswordInput = document.getElementById("confirm-password");
-const passwordMismatchMessage = document.getElementById("password-mismatch-message");
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(event) {
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmarSenha").value;
 
-confirmPasswordInput.addEventListener("input", function() {
-    if (passwordInput.value !== confirmPasswordInput.value) {
-        passwordMismatchMessage.textContent = "As senhas não coincidem.";
-    } else {
-        passwordMismatchMessage.textContent = "";
-    }
+        if (!nome || !email || !senha || !confirmarSenha) {
+            event.preventDefault(); // Impede o envio do formulário se algum campo estiver em branco
+            alert("Todos os campos são obrigatórios");
+        } else if (senha !== confirmarSenha) {
+            event.preventDefault(); // Impede o envio do formulário se as senhas não coincidirem
+            alert("As senhas não coincidem");
+        }
+    });
 });

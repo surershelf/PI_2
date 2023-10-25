@@ -12,7 +12,7 @@ body{
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    background-image: url(https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png) ;
+    background: rgb(24, 23, 23);;
     color: rgb(255, 255, 255);
 }
 .inicio{
@@ -38,8 +38,8 @@ body{
    
 }
 .input-box input {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 25%;
+    margin-right:30%;
     margin-top: 10px;
     margin-bottom: 20px;
     background-color: transparent;
@@ -54,16 +54,18 @@ body{
     font-size: 20px;
     color: #ffffff;
     padding: 20px 45px 20px 20px;
+    max-width: 50%;
     
 }
 .input-box input::placeholder{
     color: #ffffff;
+    opacity: 0.5;
 }
 
 .input-box i {
     position: absolute;
-    right:15%;
-    transform: translateY(100%);
+    right:28%;
+    transform: translateY(-225%);
     font-size: 32px;
     color: #ffffff;
 }
