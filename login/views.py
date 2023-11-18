@@ -1,29 +1,26 @@
 from django.shortcuts import render, redirect
 from .forms import RegistroForm
-from .models import Usuario
+from django.contrib.auth import get_user_model
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.parsers import JSONParser
 
-def registro(request):
-    if request.method == 'POST':
-        form = RegistroForm(request.POST)
-        if form.is_valid():
-            # Crie uma instância do modelo e salve os dados no banco de dados
-            novo_usuario = Usuario(
-                nome=form.cleaned_data['nome'],
-                email=form.cleaned_data['email'],
-                senha=form.cleaned_data['senha'],
-                data_nascimento=form.cleaned_data['data_nascimento'],
-                genero=form.cleaned_data['genero']
-            )
-            novo_usuario.save()
-            return redirect('sucesso')  # Redirecione para uma página de sucesso
-        else:
-            # O formulário não é válido, retorne a página com erros
-            return render(request, 'seu_template.html', {'form': form})
+@api_view(['POST'])
+def register(request):
+    data = JSONParser().parse(request)
+    username = data.get('username')
+    password = data.get('password')
+    email = data.get('email')
 
-    else:
-        form = RegistroForm()
+    if not username or not password or not email:
+        return JsonResponse({"error": "Um ou mais campos estão vazios."}, status=400)
 
-    return render(request, 'seu_template.html', {'form': form})
+    user = get_user_model()(username=username, email=email)
+    user.set_password(password)
+    user.save()
+
+    return JsonResponse({"message": "Registro bem-sucedido."}, status=201)
 
 
 def Login(request):

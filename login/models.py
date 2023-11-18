@@ -1,12 +1,19 @@
 
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
-class Usuario(models.Model):
-    nome = models.CharField(max_length=100)
-    email = models.EmailField()
-    senha = models.CharField(max_length=100)
-    data_nascimento = models.DateField()
-    genero = models.CharField(max_length=10)
-
-# Create your models here.
+class CustomUser(AbstractUser):
+    groups = models.ManyToManyField(
+        'auth.Group',
+        blank=True,
+        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
+        related_name="custom_user_set", # Specify the related_name here
+        related_query_name="custom_user",
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        blank=True,
+        help_text='Specific permissions for this user.',
+        related_name="custom_user_set", # Specify the related_name here
+        related_query_name="custom_user",
+    )

@@ -1,17 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("form");
-    form.addEventListener("submit", function(event) {
+    document.querySelector(".button button").addEventListener("click", async function () {
         const nome = document.getElementById("nome").value;
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
         const confirmarSenha = document.getElementById("confirmarSenha").value;
-
-        if (!nome || !email || !senha || !confirmarSenha) {
-            event.preventDefault(); // Impede o envio do formulário se algum campo estiver em branco
-            alert("Todos os campos são obrigatórios");
-        } else if (senha !== confirmarSenha) {
-            event.preventDefault(); // Impede o envio do formulário se as senhas não coincidirem
-            alert("As senhas não coincidem");
+    
+        if (senha !== confirmarSenha) {
+            alert("As senhas não correspondem.");
+            return;
         }
-    });
+    
+        try {
+            const response = await fetch("http://localhost:8000/register/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username: nome,
+                    password: senha,
+                    email: email,
+                }),
+            });
+    
+            if (response.ok) {
+                alert("Registro bem-sucedido.");
+            } else {
+                const data = await response.json();
+                alert("Erro no registro: " + data.error);
+            }
+        } catch (error) {
+            console.error("Erro:", error);
+        }
+    })
 });
