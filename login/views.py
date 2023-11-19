@@ -23,6 +23,18 @@ def register(request):
     return JsonResponse({"message": "Registro bem-sucedido."}, status=201)
 
 
+from .forms import NoteForm
+
+def index(request):
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = NoteForm()
+    return render(request, 'notepad/index.html', {'form': form})
+
+
 def Login(request):
     return render(request, 'Login.html')
 

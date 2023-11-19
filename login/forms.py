@@ -1,4 +1,5 @@
 from django import forms
+from .models import Note
 
 class RegistroForm(forms.Form):
     nome = forms.CharField(max_length=100, required=True)
@@ -13,3 +14,9 @@ class RegistroForm(forms.Form):
 
         if senha and confirmar_senha and senha != confirmar_senha:
             raise forms.ValidationError("As senhas não coincidem")
+
+
+class NoteForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = ['content']

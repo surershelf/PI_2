@@ -17,3 +17,7 @@ class CustomUser(AbstractUser):
         related_name="custom_user_set", # Specify the related_name here
         related_query_name="custom_user",
     )
+
+
+class Note(models.Model):
+    content = models.TextField()
