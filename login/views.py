@@ -5,6 +5,8 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
+from .forms import NoteForm
+
 
 @api_view(['POST'])
 def register(request):
@@ -23,16 +25,14 @@ def register(request):
     return JsonResponse({"message": "Registro bem-sucedido."}, status=201)
 
 
-from .forms import NoteForm
-
-def index(request):
+def Work(request):
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if form.is_valid():
             form.save()
     else:
         form = NoteForm()
-    return render(request, 'notepad/index.html', {'form': form})
+    return render(request, 'Work.html', {'form': form})
 
 
 def Login(request):

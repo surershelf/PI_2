@@ -14,7 +14,17 @@ body {
     align-items: center;
 }
 
-
+h1{
+    text-align: center;
+    justify-content: center;
+    background-color: #000000;
+    color: white;
+}
+form{
+    text-align: center;
+    justify-content: center;
+    top: 100px;
+}
 button {
     font-size: 40px;
     background-color: #000000;
